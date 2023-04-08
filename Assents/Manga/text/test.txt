@@ -1,0 +1,22 @@
+﻿test
+Memory in a flash
+
+Flash memory is a type of non-volatile memory that can be electronically erased and reprogrammed. Its name was invented by Toshiba to express how much faster it could be erased - “in a flash”, which means very quickly.
+
+Unlike RAM, which is volatile, flash memory retains the information stored in the chip when the power is turned off. This makes it ideal for use in digital cameras, laptops, network switches, video game cards, mobile phones and portable multimedia players. In addition, it offers fast read access times (although not as fast as RAM), with transfer rates of 12 MB per second. Unlike ROM chips, flash memory chips are rewritable, so you can update programs via software.
+
+Inside the chip, data is stored in several floating gate transistors, called cells. Each cell traditionally stores one bit of data. New devices have a multilevel cell structure so they can store more than one bit per cell. The chips are constructed with either NOR or NAND gates. NOR chips function like a computer’s main memory, while NAND work like a hard drive.
+
+Flash memory is used in several ways:
+
+- Many PCs have their BIOS (basic input/output system) stored on a flash memory chip so it can be updated if necessary.
+
+- Modems use flash memory because it allows the manufacturer to support new protocols.
+
+- USB flash drives are used to save and move MP3 and other data files between computers. They are more easily transported than external hard drives because they use solid-state technology, meaning that they don’t have fragile moving parts that can break if dropped. However, USB flash drives have less storage capacity than hard drives.
+
+- New U3 smart drives allow users to store both applications and data. They have two drive partitions and can carry applications that run on the host computer without requiring installation.
+
+- Flash memory cards are used to store images on cameras, to back up data on PDAs, to transfer games in video consoles, to record voice and music on MP3 players or to store movies on MP4 players. They are as small as stamp, and capacity can range from 8 MB to several gigabytes. The only limitation is that flash cards are often not interchangeable between devices.
+
+The future of hard drives may be hybrid hard drives. Hybrid hard drives combine a magnetic hard disk and a flash memory into one device. This allows computer to boot, or start, more quickly, and also reduces power consumption.S

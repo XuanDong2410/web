@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    /* border: 1px solid black; */
+}
+/* slide */
+.row{
+    height: 426px;
+    width: 1200px;
+}
+.content-slide .row{
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.button-slide{
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    /* align-items: center; */
+    background-color: rgb(120, 251, 98);
+    transition: all 0.5s ease;
+}
+.button-slide:hover{
+    background-color: rgba(120, 251, 98,0.5);
+}
+.slider:hover .button-slide{
+    display: block;
+
+}
+.slider
+{   
+    position: relative;
+    width: 75%;
+    float: left;
+    height: 100%;
+    padding: 10px 0px 10px 10px;
+    
+}
+.slider img.slide{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#prev{
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+}
+#next{
+    font-size: 30px;
+ position: absolute;
+    top: 50%;
+    right: 20px;   
+}
+.slide-sale{
+    padding: 10px;
+    width: 25%;
+    /* float: right; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    /* background-color: red; */
+    height: 100%;
+    height: 100%;
+}
+.slide-sale a{
+    display: block;
+    height: 240px;
+    width: 100%;
+}
+.slide-sale img{
+    width: 100%;
+    height: 100%;
+}
+.slide-sale a:hover img{
+    opacity: 0.85;
+}
+.slide-sale img:last-child{
+    /* margin-top: 22px; */
+    /* margin-bottom: 0px; */
+
+}
+
+/* slide */
+
+
+    </style>
+    <title>Trang Chu</title>
+</head>
+<body>
+    <div class="slider">
+        <img src="https://nhasachphuongnam.com/images/promo/238/Banner_Thai_Cong_890x396px-01.jpg" alt="" stt="0" class="slide">
+        <img src="https://nhasachphuongnam.com/images/promo/247/Banner_KM_Thang_4_890x396px-01.jpg" alt="" stt="1" class="slide" style="display: none;">
+        <img src="https://nhasachphuongnam.com/images/promo/245/Banner_10_nam_Pham_Duy_890x396px.jpg" alt="" stt="2" class="slide" style="display: none" >
+        <img src="https://nhasachphuongnam.com/images/promo/245/Banner_10_nam_Pham_Duy_890x396px.jpg" alt="" stt="3" class="slide" style="display: none;">
+        <a class="button-slide" id="prev-btn" href="#"><i class="fa-solid fa-angle-left"></i></a>
+        <a class="button-slide" id="next-btn" href="#"><i class="fa-solid fa-angle-right"></i></a>
+    </div>
+    
+    <script>
+        var currentSlide = 0;
+        var slides = document.querySelectorAll('.slide');
+        var prevBtn = document.querySelector('#prev-btn');
+        var nextBtn = document.querySelector('#next-btn');
+    
+        function showSlide(n) {
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slides[n].style.display = 'block';
+        }
+    
+        function prevSlide() {
+            currentSlide--;
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+            showSlide(currentSlide);
+        }
+    
+        function nextSlide() {
+            currentSlide++;
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            showSlide(currentSlide);
+        }
+    
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+    </script>
+    
+</body>
+</html>

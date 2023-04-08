@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic file list</title>
+	<script type="text/javascript">
+		function loadFile(filename) {
+			fetch(filename)
+				.then(res => res.text())
+				.then(text => {
+					document.getElementById("file-content").innerHTML = text;
+				})
+				.catch(err => console.error(err));
+		}
+
+		window.onload = function() {
+			fetch("list.txt")
+				.then(res => res.text())
+				.then(text => {
+					const filenames = text.split("\n");
+					const buttonContainer = document.getElementById("buttons");
+					for (const filename of filenames) {
+						if (filename !== "") {
+							const button = document.createElement("button");
+							button.textContent = filename;
+							button.onclick = function() {
+								loadFile(filename);
+							};
+							buttonContainer.appendChild(button);
+						}
+					}
+					loadFile(filenames[0]);
+				})
+				.catch(err => console.error(err));
+		}
+	</script>
+</head>
+<body>
+	<div id="buttons"></div>
+	<div id="file-content"></div>
+</body>
+</html>

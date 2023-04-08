@@ -1,0 +1,24 @@
+﻿test2
+A
+
+Most computers use floppy disks. Floppies conform to a standard and you can use them to carry data from one place to another. They are also very cheap, but they are slow and have a limited capacity.
+
+B
+
+Almost all desktop computers have hard disks. They are fast and can store much greater amounts of data than floppies, but they are fixed inside the computer and you cannot use them to transfer data.
+
+C
+
+You can move data from place to place using removable hard disks. They are almost as fast as fixed hard disks and also have high capacities, but they are relatively expensive. They do not all conform to one standard and they are not very common.
+
+D
+
+CD ROMs disks are very common and conform to a standard. They are removable and can hold large amounts of data. They are also cheap to make. However, they are usually read-only. You cannot change the informatiSon on them. They are also slow compared to hard disks.
+
+E
+
+Magneto-opticacal disks are like CD-ROMs, but you can write data onto them. They are removable, have large capacities and last for a long time, but they are expensive and do not all conform to one standard. For this reason, they are not very common.
+
+F
+
+Magnetic tape is a cheap medium. You can you it to store very large amounts of data, but it does not allow random access. Everytime you read or write a piece of data , you start at the beginning of the tape. Tape drives are slow. Therefore, it is only suitable for doing backups.
