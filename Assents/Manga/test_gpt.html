@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Thêm thư viện SwiperJS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+        /* Điều chỉnh kích thước của slide */
+        .swiper-container {
+            width: 40%;
+            height: 300px;
+        }
+
+        /* Điều chỉnh kích thước và vị trí của các nút điều khiển */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            margin-top: -25px;
+        }
+
+        .swiper-button-next {
+            right: 0;
+        }
+
+        .swiper-button-prev {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Thêm các slide vào đây -->
+            <div class="swiper-slide">
+                <img src="img/OP_90.jpg" alt="Slide 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/OP_91.webp" alt="Slide 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/OP_96.webp" alt="Slide 3">
+            </div>
+        </div>
+        <!-- Thêm các nút điều khiển -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script>
+        // Khởi tạo đối tượng Swiper
+        var mySwiper = new Swiper('.swiper-container', {
+            // Định cấu hình cho slide
+            loop: true,
+            effect: 'fade',
+            autoplay: {
+                delay: 5000,
+            },
+            // Định cấu hình cho các nút điều khiển
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+</html>

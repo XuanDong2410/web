@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #file-content {
+        width: 60%;
+        margin: 0 auto;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+      }
+      #buttons {
+        position: fixed;
+        bottom: 20px;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="file-content"></div>
+    <div id="buttons">
+      <button id="prev-btn">Prev</button>
+      <button id="next-btn">Next</button>
+    </div>
+
+    <script>
+      let currentFileIndex = 0;
+      var filenames = ["text/test.txt", "text/test1.txt","text/test2.txt","text/list.txt","text/namefile.txt"];
+      const numFiles = filenames.length;
+
+      const fileContent = document.getElementById("file-content");
+      const prevBtn = document.getElementById("prev-btn");
+      const nextBtn = document.getElementById("next-btn");
+
+      function loadFile(index) {
+        fetch(filenames[index])
+          .then((res) => res.text())
+          .then((text) => {
+            const newContent = text
+              .replace(/(Chương [0-9]+)/g, "$1")
+              .replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/"/g, "&quot;")
+              .replace(/'/g, "&#039;");
+            fileContent.innerHTML = newContent;
+          })
+          .catch((err) => console.error(err));
+      }
+
+      function prevFile() {
+        if (currentFileIndex > 0) {
+          currentFileIndex--;
+        } else {
+          currentFileIndex = numFiles - 1;
+        }
+        loadFile(currentFileIndex);
+      }
+
+      function nextFile() {
+        if (currentFileIndex < numFiles - 1) {
+          currentFileIndex++;
+        } else {
+          currentFileIndex = 0;
+        }
+        loadFile(currentFileIndex);
+      }
+
+      prevBtn.addEventListener("click", prevFile);
+      nextBtn.addEventListener("click", nextFile);
+
+      loadFile(currentFileIndex);
+      
+    </script>
+  </body>
+</html>
