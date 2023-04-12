@@ -6,29 +6,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      #file-content {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #menu {
+        width: 100%;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        background-color: rgb(157, 243, 243);
+       
+        height: 40px;
+        text-decoration: none;
+        top: 10px;
+        
+ 
+      }
+      ul {
+        /* margin: 10px; */
+      }
+      li {
+        list-style-type: none;
+        text-transform: uppercase;
+        text-align: center;
+        /* margin: 10px; */
+      }
+      #myInput {
+        position: absolute;
+        background-position: 10px 12px;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+        width: 30%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        border-radius:10px;
+        margin-bottom: 12px;
+        outline:none;
+        right: 20px;
+}
+      .page {
         width: 60%;
-        margin: 0 auto;
+        margin: 0;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        border: 1px solid;
+        border-radius: 15px;
+        padding: 15px;
+      }
+      #file-content {
         word-wrap: break-word;
         white-space: pre-wrap;
       }
       #buttons {
+        width: 80%;
         position: fixed;
+        left: 50%;
+        transform: translate(-50%,-50%);
         bottom: 20px;
         z-index: 9999;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+      }
+      .btn {
+        border: 1px solid greenyellow;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: rgb(74, 203, 109);
+      }
+      .btn:hover{
+        background-color: rgb(60, 142, 213);
       }
     </style>
   </head>
   <body>
-    <div id="file-content"></div>
+    <div id="main">
+          <div id="menu">
+              <ul>
+                <li>Tên truyện</li>
+              </ul>
+              <input type="search" id="myInput" onkeyup="search()" placeholder= "Search here.."title="Type in a name">
+           </div>    
+              
+         
+        <div class="page">
+              <div id="file-content"></div>
+        </div>
+
+      
+    </div>
     <div id="buttons">
-      <button id="prev-btn">Prev</button>
-      <button id="next-btn">Next</button>
+      <div id="prev-btn" class="btn">Prev</div>
+      <div id="next-btn" class="btn">Next</div>
+    </div>
     </div>
 
+
     <script>
+
+
       let currentFileIndex = 0;
-      var filenames = ["text/test.txt", "text/test1.txt","text/test2.txt","text/list.txt","text/namefile.txt"];
+      var filenames = [
+                      "text/test.txt", 
+                      "text/test1.txt",
+                      "text/test2.txt",
+                      "text/namefile.txt",
+                      "text/shv.txt" ];
       const numFiles = filenames.length;
 
       const fileContent = document.getElementById("file-content");
@@ -73,6 +162,9 @@
       nextBtn.addEventListener("click", nextFile);
 
       loadFile(currentFileIndex);
+
+      const pageDiv = document.getElementById("page");
+      const scrollbar = new SimpleBar(pageDiv, { autoHide: false });
       
     </script>
   </body>
